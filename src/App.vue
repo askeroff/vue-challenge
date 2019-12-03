@@ -1,28 +1,76 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="wrapper">
+    <header>
+      <h1>Aline App Challenge</h1>
+      <div class="flex menu">
+        <router-link to="/calc">Calculator</router-link>
+        <router-link to="/">Websockets</router-link>
+      </div>
+    </header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      message: "Hello, vue"
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+h1 {
+  color: #1f1235;
+}
+h2,
+h3,
+h4 {
+  color: #1b1425;
+}
+
+header {
+  border-bottom: 4px solid #67568c;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary {
+  background: #ff6e6c;
+  color: #1f1235;
+  border: 1px solid #1f1235;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu {
+  padding: 10px 0;
+}
+
+.menu a {
+  color: #1f1235;
+  text-decoration: none;
+  border-bottom: 2px solid #ff6e6c;
+}
+
+.menu a + a {
+  margin-left: 10px;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid #67568c;
 }
 </style>
