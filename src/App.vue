@@ -4,7 +4,7 @@
       <h1>Aline App Challenge</h1>
       <div class="flex menu">
         <router-link to="/calc">Calculator</router-link>
-        <router-link to="/">Websockets</router-link>
+        <router-link to="/websockets">Websockets</router-link>
       </div>
     </header>
     <router-view></router-view>
