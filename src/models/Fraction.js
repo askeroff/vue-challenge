@@ -88,6 +88,14 @@ export default class FractionModel {
     return stack;
   }
 
+  static reduceFraction(num, den) {
+    var gcd = function gcd(num, den) {
+      return +den ? gcd(+den, +num % +den) : +num;
+    };
+    gcd = gcd(num, den);
+    return [num / gcd, den / gcd];
+  }
+
   static calcNumerator(fractions) {
     // eslint-disable-next-line
     console.log(fractions, 'hey there');

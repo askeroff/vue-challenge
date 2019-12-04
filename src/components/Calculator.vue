@@ -45,10 +45,11 @@ export default {
     },
     calculate() {
       const answer = FractionModel.calcNumerator(this.fractions);
-      // no idea why it would detect changes like that
-      // but not when you rewrite the object itself
-      this.answer.den = answer.den;
-      this.answer.num = answer.num;
+      const reduced = FractionModel.reduceFraction(answer.num, answer.den);
+      // eslint-disable-next-line
+      console.log(reduced);
+      this.answer.den = reduced[1];
+      this.answer.num = reduced[0];
     }
   },
   components: {
