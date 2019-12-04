@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: content-box;
+}
 h1 {
   color: #1f1235;
 }

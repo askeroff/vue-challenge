@@ -4,6 +4,7 @@
       <input
         type="text"
         v-model="fractionModel.num"
+        v-bind:disabled="disabled"
         value="fractionModel.num"
         name="num"
         class="input_fraction"
@@ -12,6 +13,7 @@
     <div class="input_fraction_wrapper">
       <input
         type="text"
+        v-bind:disabled="disabled"
         v-model="fractionModel.den"
         value="fractionModel.den"
         name="den"
@@ -26,7 +28,8 @@ import FractionModel from "../models/Fraction";
 export default {
   name: "FractionVue",
   props: {
-    frac: FractionModel
+    frac: FractionModel,
+    disabled: Boolean
   },
   data() {
     return {

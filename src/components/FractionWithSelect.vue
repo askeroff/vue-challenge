@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="select_wrapper">
-      <select name="operators" id="operators">
+      <select v-model="frac.sign" name="operators" id="operators">
         <option
           v-for="operator in operators"
           v-bind:key="operator"
