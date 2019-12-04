@@ -74,7 +74,7 @@ export default class FractionModel {
       '/': FractionModel.divide
     };
     output.forEach(item => {
-      // eslint-disable-next-line
+      //   eslint-disable-next-line
       //   debugger;
       if (typeof item !== 'string') {
         stack.push(item);
@@ -83,8 +83,12 @@ export default class FractionModel {
       let second = stack.pop();
       let first = stack.pop();
       let result = operations[item](first, second);
-      stack.push(result);
+      if (result.num !== 0) {
+        stack.push(result);
+      }
     });
+    // eslint-disable-next-line
+    console.log(stack, ' STACK HERE');
     return stack;
   }
 
@@ -116,7 +120,7 @@ export default class FractionModel {
         return;
       }
       const lastOperator = stack.last();
-      if (precedence[lastOperator] > precedence[item]) {
+      if (precedence[lastOperator] >= precedence[item]) {
         output.enqueue(stack.pop());
       }
       stack.push(item);
@@ -125,10 +129,11 @@ export default class FractionModel {
     while (!stack.isEmpty()) {
       output.enqueue(stack.pop());
     }
+    // eslint-disable-next-line
+    console.log(output, 'output bitch');
     const parsed = FractionModel.parseOutput(output.items);
     const answer = parsed.pop();
-    // eslint-disable-next-line
-    console.log(answer, 'output bitch');
+
     return answer;
   }
 }
