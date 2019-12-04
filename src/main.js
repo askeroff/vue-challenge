@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import App from './App.vue';
+import VueRouter from 'vue-router';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 const CalculatorVue = () => import('./components/Calculator.vue');
 
@@ -15,9 +15,9 @@ const router = new VueRouter({
   routes // сокращённая запись для `routes: routes`
 });
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 new Vue({
   render: h => h(App),
   router
-}).$mount('#app')
+}).$mount('#app');

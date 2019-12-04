@@ -1,35 +1,47 @@
 <template>
-    <div class="calculator">
-        <div class="flex">
-            <div>
-                <div class="input_fraction_wrapper">
-                    <input type="text" class="input_fraction"/>
-                </div>
-                <div class="input_fraction_wrapper">
-                    <input type="text" class="input_fraction"/>
-                </div>
-            </div>
-            <FractionVue v-for="frac in fractions"
-                         v-bind:key="frac.key" v-bind:frac="frac"></FractionVue>
-        </div>
-
-        <button class="btn-primary">Add a fraction</button>
+  <div class="calculator">
+    <div class="flex">
+      <FractionVue v-bind:frac="fractions[0]"></FractionVue>
+      <FractionWithSelectVue
+        v-for="frac in fractions.slice(1)"
+        v-bind:key="frac.key"
+        v-bind:frac="frac"
+      ></FractionWithSelectVue>
     </div>
+
+    <div class="flex buttons-block">
+      <button v-on:click="addFraction" class="btn-primary">Add a fraction</button>
+      <button class="btn-primary">Calculate</button>
+    </div>
+  </div>
 </template>
 
 <script>
-    import FractionVue from './Fraction';
-    import FractionModel from '../models/Fraction';
+import FractionWithSelectVue from "./FractionWithSelect";
+import FractionVue from "./Fraction";
+import FractionModel from "../models/Fraction";
 
-    export default {
-        name: "CalculatorVue",
-        data() {
-            return {
-                fractions: [new FractionModel('1', '2')]
-            }
-        },
-        components: {
-            FractionVue
-        }
+export default {
+  name: "CalculatorVue",
+  data() {
+    return {
+      fractions: [new FractionModel("", "", 1), new FractionModel("", "", 2)]
     };
+  },
+  methods: {
+    addFraction() {
+      this.fractions.push(new FractionModel("", "", this.fractions.length + 1));
+    }
+  },
+  components: {
+    FractionVue,
+    FractionWithSelectVue
+  }
+};
 </script>
+
+<style scoped>
+.buttons-block button + button {
+  margin-left: 10px;
+}
+</style>

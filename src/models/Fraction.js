@@ -1,7 +1,7 @@
 export default class FractionModel {
-    constructor(num, den) {
-        this.key = new Date().getTime();
-        this.num = num;
-        this.den = den;
-    }
+  constructor(num, den, key) {
+    this.key = key;
+    this.num = num;
+    this.den = den;
+  }
 }
