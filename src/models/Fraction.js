@@ -122,7 +122,7 @@ export default class FractionModel {
       output.enqueue(stack.pop());
     }
     // eslint-disable-next-line
-    console.log(output, 'output bitch');
+    console.log(output, 'less agressive comment :D');
     const parsed = FractionModel.parseOutput(output.items);
     const answer = parsed.pop();
 

@@ -1,7 +1,8 @@
 <template>
   <div id="app" class="wrapper">
     <header>
-      <h1>Aline App Challenge</h1>
+      <h1>Vuejs App Challenge</h1>
+      <h2>Fractions && Websockets</h2>
       <div class="flex menu">
         <router-link to="/calc">Calculator</router-link>
         <router-link to="/websockets">Websockets</router-link>
