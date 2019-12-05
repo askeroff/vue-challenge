@@ -16,14 +16,6 @@ export default class FractionModel {
     this.den = den;
   }
 
-  static getCommonDenominator(fractions) {
-    let result = 1;
-    fractions.forEach(item => {
-      result *= item.den;
-    });
-    return result;
-  }
-
   static getInput(fractions) {
     const operators = fractions.map(item => item.sign);
     operators.shift();
