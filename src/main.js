@@ -8,7 +8,7 @@ const CalculatorVue = () => import('./components/Calculator.vue');
 const Websockets = () => import('./components/Websockets.vue');
 
 const routes = [
-  { path: '/', component: CalculatorVue },
+  { path: '/', component: Websockets },
   { path: '/websockets', component: Websockets },
   { path: '/calc', component: CalculatorVue }
 ];
