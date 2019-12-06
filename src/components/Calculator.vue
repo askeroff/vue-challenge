@@ -33,12 +33,12 @@
         fractions: [
           new FractionModel("2", "3", 1),
         ],
-        answer: new FractionModel("1", "1", 0)
+        answer: new FractionModel("", "", 0)
       };
     },
     methods: {
       addFraction() {
-        this.fractions.push(new FractionModel("", "", this.fractions.length + 1));
+        this.fractions.push(new FractionModel("1", "1", this.fractions.length + 1));
       },
       calculate() {
         const answer = FractionModel.calcNumerator(this.fractions);
