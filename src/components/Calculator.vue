@@ -16,7 +16,7 @@
 
     <div class="flex buttons-block">
       <button v-on:click="addFraction" class="btn-primary">Add a fraction</button>
-      <button v-on:click="calculate" class="btn-primary">Calculate</button>
+<!--      <button v-on:click="calculate" class="btn-primary">Calculate</button>-->
     </div>
   </div>
 </template>
