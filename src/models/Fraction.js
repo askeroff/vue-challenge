@@ -14,6 +14,7 @@ export default class FractionModel {
     this.key = key;
     this.num = num;
     this.den = den;
+    this.error = false;
   }
 
   static getInput(fractions) {

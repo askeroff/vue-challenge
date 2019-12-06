@@ -6,29 +6,32 @@
           v-for="operator in operators"
           v-bind:key="operator"
           v-bind:value="operator"
-        >{{operator}}</option>
+        >{{operator}}
+        </option>
       </select>
     </div>
 
-    <FractionVue v-bind:frac="frac"></FractionVue>
+    <FractionVue v-bind:calculate="calculate" v-bind:frac="frac"></FractionVue>
   </div>
 </template>
 
 <script>
-import FractionModel from "../models/Fraction";
-import FractionVue from "./Fraction";
-export default {
-  name: "FractionWithSelectVue",
-  props: {
-    frac: FractionModel
-  },
-  components: {
-    FractionVue
-  },
-  data() {
-    return {
-      operators: ["+", "-", "*", "/"]
-    };
-  }
-};
+  import FractionModel from "../models/Fraction";
+  import FractionVue from "./Fraction";
+
+  export default {
+    name: "FractionWithSelectVue",
+    props: {
+      frac: FractionModel,
+      calculate: Function
+    },
+    components: {
+      FractionVue
+    },
+    data() {
+      return {
+        operators: ["+", "-", "*", "/"]
+      };
+    }
+  };
 </script>
