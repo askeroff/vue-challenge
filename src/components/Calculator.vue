@@ -32,10 +32,6 @@
       return {
         fractions: [
           new FractionModel("2", "3", 1),
-          new FractionModel("1", "2", 2),
-          new FractionModel("3", "4", 3),
-          new FractionModel("2", "4", 4),
-          new FractionModel("13", "24", 5)
         ],
         answer: new FractionModel("", "", 0)
       };
