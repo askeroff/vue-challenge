@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       comments: [],
-      addId: 0,
+      addId: 3,
       newCommentText: "",
       commentRequests: {},
       ready: false,
