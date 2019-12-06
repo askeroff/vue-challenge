@@ -38,7 +38,7 @@
     data() {
       return {
         comments: [],
-        addId: 3,
+        addId: 5,
         newCommentText: "",
         commentRequests: {},
         ready: false,
@@ -56,6 +56,8 @@
         });
       },
       delete: function (action) {
+        // eslint-disable-next-line
+        console.log(action)
         this.comments = this.comments.filter(item => item.id !== +action.id);
       },
       add: function (action) {
@@ -78,7 +80,8 @@
         this.socket.server.send(id);
       },
       addCommentRequest: function () {
-        const id = this.addId + 1;
+        this.addId += 1;
+        const id = this.addId;
         this.commentRequests[id] = {};
         this.commentRequests[id].method = "add";
         this.commentRequests[id].data = this.newCommentText;
